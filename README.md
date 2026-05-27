@@ -1,12 +1,22 @@
 # Skills
 
-这是 Stitch 的 OpenClaw Skills 集合，基于 [chujianyun/skills](https://github.com/chujianyun/skills) 的格式规范整理。
+这是 Stitch 的 Skills 集合，包含两个系列：
+
+- **OpenClaw Skills** - 基于 [chujianyun/skills](https://github.com/chujianyun/skills) 的格式规范
+- **Claude Code Skills** - Claude Code 专用技能扩展
 
 每个 skill 不只是一个说明文件，而是围绕某一类任务组织起来的可复用能力单元。
 
 ---
 
-## Skill 地图
+## 目录
+
+- [OpenClaw Skills](#openclaw-skills)
+- [Claude Code Skills](#claude-code-skills)
+
+---
+
+## OpenClaw Skills
 
 ### 1. 平台集成类（Tool Wrapper）
 
@@ -145,7 +155,82 @@ Apple 平台相关工具。
 
 ---
 
+## Claude Code Skills
+
+Claude Code 专用技能扩展，基于 Anthropic 官方技能格式。
+
+### 1. 开发效率类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [context-mode](skills/claudecode/context-mode.md) | 最佳实践 | 大输出处理、日志分析、JSON解析 |
+| [context-mode-ops](skills/claudecode/context-mode-ops.md) | 最佳实践 | GitHub issues/PR/release 管理 |
+| [planning-with-files-zh](skills/claudecode/planning-with-files-zh.md) | 项目管理 | 任务规划、进度跟踪、待办清单 |
+| [ralph-loop](skills/claudecode/ralph-loop.md) | 开发流程 | 写代码→测试→修复自动化循环 |
+| [review-and-refactor](skills/claudecode/review-and-refactor.md) | 代码质量 | 代码审查、重构建议 |
+
+### 2. AI 安全与审计类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [reins](skills/claudecode/reins.md) | 安全防护 | 运行时安全、危险操作拦截 |
+| [security-review](skills/claudecode/security-review.md) | 安全审计 | 身份验证、输入验证、敏感数据处理 |
+| [quality-auditor](skills/claudecode/quality-auditor.md) | 质量审计 | 12维度代码质量评估 |
+| [ai-slop-cleaner](skills/claudecode/ai-slop-cleaner.md) | 代码优化 | 去除AI生成代码的常见问题 |
+
+### 3. Prompt 工程类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [prompt-factory](skills/claudecode/prompt-factory.md) | Prompt生成 | 从无到有生成专业级Prompt |
+| [prompt-optimizer](skills/claudecode/prompt-optimizer.md) | Prompt优化 | 从有到好优化现有Prompt |
+| [prompt-caching](skills/claudecode/prompt-caching.md) | 性能优化 | Prompt缓存、CAG、响应缓存 |
+
+### 4. Claude Code 扩展类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [hook-factory](skills/claudecode/hook-factory.md) | 自动化 | 创建 Claude Code hooks |
+| [mcp-builder](skills/claudecode/mcp-builder.md) | MCP开发 | 构建 MCP 服务器 |
+| [mcp-integration](skills/claudecode/mcp-integration.md) | MCP集成 | MCP 集成到插件 |
+| [plugin-structure](skills/claudecode/plugin-structure.md) | 插件开发 | Claude Code 插件开发 |
+| [skill-creator](skills/claudecode/skill-creator.md) | 技能开发 | 创建和管理 Skills |
+| [command-development](skills/claudecode/command-development.md) | 命令开发 | Slash Commands 开发 |
+
+### 5. 搜索与研究类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [anysearch](skills/claudecode/anysearch.md) | 聚合搜索 | 网页/图片/代码/文献多源搜索 |
+| [academic-researcher](skills/claudecode/academic-researcher.md) | 学术研究 | 论文搜索、文献综述 |
+| [web-scraping](skills/claudecode/web-scraping.md) | 数据采集 | 复杂网页数据抓取 |
+
+### 6. 文档与内容类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [docx](skills/claudecode/docx.md) | 文档生成 | Word 文档创建和编辑 |
+| [ppt-master](skills/claudecode/ppt-master.md) | 演示生成 | PPT 制作和导出 |
+| [pdf-to-markdown](skills/claudecode/pdf-to-markdown.md) | 格式转换 | PDF 转 Markdown |
+| [humanizer-zh](skills/claudecode/humanizer-zh.md) | 内容优化 | 去除 AI 写作痕迹 |
+| [academic-essay](skills/claudecode/academic-essay.md) | 学术写作 | 论文/课程心得自动生成 |
+
+### 7. 其他工具类
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [agent-browser](skills/claudecode/agent-browser.md) | 浏览器自动化 | 网页操作、表单填写、截图 |
+| [playwright](skills/claudecode/playwright.md) | E2E测试 | Playwright 测试最佳实践 |
+| [claude-automation-recommender](skills/claudecode/claude-automation-recommender.md) | 自动化建议 | 推荐 Claude Code 自动化方案 |
+| [claude-md-improver](skills/claudecode/claude-md-improver.md) | 配置优化 | CLAUDE.md 维护和改进 |
+| [self-improving-agent](skills/claudecode/self-improving-agent.md) | 自我进化 | 经验积累和规则进化 |
+| [memory-management](skills/claudecode/memory-management.md) | 记忆系统 | 两层记忆系统管理 |
+
+---
+
 ## 安装
+
+### OpenClaw Skills
 
 ### Method 1: 使用 OpenClaw 内置 skills 命令
 
@@ -169,6 +254,32 @@ openskills install fan1959/skills --global
 
 ```
 skills/
+├── claudecode/              # Claude Code Skills（新增）
+│   ├── context-mode.md
+│   ├── context-mode-ops.md
+│   ├── reins.md
+│   ├── prompt-factory.md
+│   ├── prompt-optimizer.md
+│   ├── hook-factory.md
+│   ├── mcp-builder.md
+│   ├── plugin-structure.md
+│   ├── skill-creator.md
+│   ├── self-improving-agent.md
+│   ├── humanizer-zh.md
+│   ├── ai-slop-cleaner.md
+│   ├── planning-with-files-zh.md
+│   ├── ralph-loop.md
+│   ├── review-and-refactor.md
+│   ├── quality-auditor.md
+│   ├── security-review.md
+│   ├── anysearch.md
+│   ├── academic-researcher.md
+│   ├── docx.md
+│   ├── ppt-master.md
+│   ├── pdf-to-markdown.md
+│   ├── agent-browser.md
+│   ├── playwright.md
+│   └── ...（其他 Claude Code skills）
 ├── 1password/              # 1Password CLI
 ├── apple-notes/            # Apple Notes
 ├── apple-reminders/        # Apple Reminders
